@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 
 class InfoActivity : AppCompatActivity() {
+    //Info about to use the application
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info)

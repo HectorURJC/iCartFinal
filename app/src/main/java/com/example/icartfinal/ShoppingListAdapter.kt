@@ -8,6 +8,7 @@ import android.widget.TextView
 //import androidx.core.os.persistableBundleOf
 import androidx.recyclerview.widget.RecyclerView
 
+//Class principal of shopping list
 class ShoppingListAdapter(
     listaCompra:ArrayList<String>,
     val listener: ShoppingListActivity,
@@ -15,7 +16,8 @@ class ShoppingListAdapter(
     RecyclerView.Adapter<ShoppingListAdapter.ViewHolder>() {
     var lista = listaCompra
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{ //Contains the views to manage
+    //Contains the views to manage
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{
         var itemTitle = itemView.findViewById<TextView>(R.id.tvShoppingList)
         val btnEliminar = itemView.findViewById<Button>(R.id.btnEliminar)
 
@@ -26,7 +28,8 @@ class ShoppingListAdapter(
         override fun onClick(v: View?) { //When clicking on the screen add another position in the list
         }
 
-        fun bindName(nombre: String, position: Int) { //Data of product which user want to get
+        //Data of product which user want to get
+        fun bindName(nombre: String, position: Int) {
             itemTitle.text = nombre
             btnEliminar.setOnClickListener { onClickDelete(position) }
         }
@@ -47,7 +50,8 @@ class ShoppingListAdapter(
         return lista.size
     }
 
-    fun setItems(listaCompra:ArrayList<String>){ //Setter of items
+    //Setter of items
+    fun setItems(listaCompra:ArrayList<String>){
         lista = listaCompra
         notifyDataSetChanged()
     }

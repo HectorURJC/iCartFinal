@@ -1,7 +1,8 @@
 package com.example.icartfinal
 
+//Class to show products and category
 class ShoppingList() {
-    companion object{
+    companion object {
         val frutas = Category( //List of fruits
             "Frutas", arrayOf(
                 Product("Manzanas"),
@@ -131,11 +132,25 @@ class ShoppingList() {
         )
 
 
-        val listadoCategorias = arrayOf<Category>(frutas, verduras, ternera, pollo, cerdo, lacteos, queso, pasta, fiambre, zumos, bano, limpieza)
+        val listadoCategorias = arrayOf<Category>(
+            frutas,
+            verduras,
+            ternera,
+            pollo,
+            cerdo,
+            lacteos,
+            queso,
+            pasta,
+            fiambre,
+            zumos,
+            bano,
+            limpieza
+        )
         var listaCompra = ArrayList<String>()
-        fun addToList(elem: String) { //Add product to list
+        //Add product to list
+        fun addToList(elem: String) {
             this.listaCompra.add(elem)
         }
-    }
 
+    }
 }

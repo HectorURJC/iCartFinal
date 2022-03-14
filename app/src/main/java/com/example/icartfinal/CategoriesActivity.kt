@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+
+//Principal class of category
 class CategoriesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) { //The principal function when running.
         super.onCreate(savedInstanceState)
@@ -34,6 +36,7 @@ class CategoriesActivity : AppCompatActivity() {
         numProduct.text = ShoppingList.listaCompra.size.toString()
     }
 
+    //Insert one position in list
     fun onRecyclerClick(position: Int) { //Insert one position in list
         val intent = Intent(this, ProductsActivity::class.java)
         intent.putExtra("posicion", position)

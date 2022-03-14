@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+//Principal activity to shopping list
 class ShoppingListActivity : AppCompatActivity() {
 
     lateinit var adapter:ShoppingListAdapter
@@ -28,7 +29,8 @@ class ShoppingListActivity : AppCompatActivity() {
 
     }
 
-    fun onClickDelete(posicion: Int){ //Function to delete elements
+    //Function to delete elements
+    fun onClickDelete(posicion: Int){
         ShoppingList.listaCompra.removeAt(posicion)
         adapter.setItems(ShoppingList.listaCompra)
     }

@@ -9,6 +9,7 @@ import android.widget.ImageButton
 import android.widget.Switch
 import androidx.appcompat.app.AppCompatDelegate
 
+//Principal class of all application
 class MainActivity : AppCompatActivity() {
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) { //The principal function when running.

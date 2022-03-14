@@ -6,12 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+//Class to adapter the products
 class ProductAdapter(
     val listadoProductos: Array<Product>,
     val listener: ProductsActivity,
 ): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{ //Contains the views to manage
+    //Contains the views to manage
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{
         var itemTitle = itemView.findViewById<TextView>(R.id.tvProducto)
 
         init { //Constructor function
@@ -25,7 +27,8 @@ class ProductAdapter(
             }
         }
 
-        fun bindProduct(prod: Product){ //Data of product which user wants to get
+        //Data of product which user wants to get
+        fun bindProduct(prod: Product){
             itemTitle.text = prod.nombre
 
         }

@@ -6,13 +6,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+//Adapter of category to do the functionality
 class CategoryAdapter(
     val categorias: Array<Category>,
     val listener: CategoriesActivity,
 
     ): RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{ //Contains the views to manage
+    //Contains the views to manage
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{
         var itemTitle = itemView.findViewById<TextView>(R.id.tvCategoria)
 
         init { //Constructor function
@@ -26,7 +28,8 @@ class CategoryAdapter(
             }
         }
 
-        fun bindCategory(categoria: Category){ //Data of category which user wants to get
+        //Data of category which user wants to get
+        fun bindCategory(categoria: Category){
             itemTitle.text = categoria.nombreCategoria
         }
 

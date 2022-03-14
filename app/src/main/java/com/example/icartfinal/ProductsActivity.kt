@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+//Principal class to products
 class ProductsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) { //The principal function when running on the screen.
@@ -35,7 +36,8 @@ class ProductsActivity : AppCompatActivity() {
         numProduct.text = ShoppingList.listaCompra.size.toString()
     }
 
-    fun onRecyclerClick(position: Int, listaProductos: Array<Product>) { //When clicking any products, vibrate the device.
+    //When clicking any products, vibrate the device.
+    fun onRecyclerClick(position: Int, listaProductos: Array<Product>) {
         ShoppingList.addToList(listaProductos[position].nombre)
         val vibratorService = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibratorService.vibrate(200)
