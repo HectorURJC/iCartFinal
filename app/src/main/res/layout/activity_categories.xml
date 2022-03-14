@@ -9,14 +9,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCategorias"
-        android:layout_width="359dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="363dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintBottom_toTopOf="@+id/btnVerListaCat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategorias"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button

@@ -9,14 +9,16 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProductos"
-        android:layout_width="359dp"
-        android:layout_height="400dp"
+        android:layout_width="366dp"
+        android:layout_height="334dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toTopOf="@+id/btnVerLista"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombreCategoria"
+        app:layout_constraintVertical_bias="0.145"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -44,7 +46,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="10dp"
         android:fontFamily="sans-serif-light"
-        android:text="@string/Categorias"
+        android:text="Tipos de Productos"
         android:textColor="#FBFBFB"
         android:textSize="48sp"
         app:fontFamily="cursive"

@@ -10,12 +10,12 @@ class ShoppingListActivity : AppCompatActivity() {
 
     lateinit var adapter:ShoppingListAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { //The principal function when running on the screen.
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping_list)
 
         val btnBorrarTodo = findViewById<Button>(R.id.btnBorrarTodo)
-        btnBorrarTodo.setOnClickListener {
+        btnBorrarTodo.setOnClickListener { //Button of delete all elements in list
             ShoppingList.listaCompra.clear()
             adapter.notifyDataSetChanged()
         }
@@ -28,10 +28,7 @@ class ShoppingListActivity : AppCompatActivity() {
 
     }
 
-    fun onRecyclerClick(position: Int) {
-        // De momento no hace nada
-    }
-    fun onClickDelete(posicion: Int){
+    fun onClickDelete(posicion: Int){ //Function to delete elements
         ShoppingList.listaCompra.removeAt(posicion)
         adapter.setItems(ShoppingList.listaCompra)
     }

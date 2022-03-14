@@ -2,7 +2,7 @@ package com.example.icartfinal
 
 class ShoppingList() {
     companion object{
-        val frutas = Category(
+        val frutas = Category( //List of fruits
             "Frutas", arrayOf(
                 Product("Manzanas"),
                 Product("Naranjas"),
@@ -15,7 +15,7 @@ class ShoppingList() {
             )
         )
 
-        val verduras = Category(
+        val verduras = Category( //List of type of vegetables
             "Vegetales", arrayOf(
                 Product("Lechuga"),
                 Product("Cebolla"),
@@ -30,7 +30,7 @@ class ShoppingList() {
             )
         )
 
-        val ternera = Category(
+        val ternera = Category( //List of type of meat veal
             "Ternera", arrayOf(
                 Product("Filete de ternera"),
                 Product("Solomillo de ternera"),
@@ -38,7 +38,7 @@ class ShoppingList() {
             )
         )
 
-        val pollo = Category(
+        val pollo = Category( //List of type of meat chicken
             "Pollo", arrayOf(
                 Product("Pechuga"),
                 Product("Muslos"),
@@ -48,7 +48,7 @@ class ShoppingList() {
             )
         )
 
-        val cerdo = Category(
+        val cerdo = Category( //List of type of meat pig
             "Cerdo", arrayOf(
                 Product("Solomillo de cerdo"),
                 Product("Cinta de lomo"),
@@ -56,7 +56,7 @@ class ShoppingList() {
             )
         )
 
-        val lacteos = Category(
+        val lacteos = Category( //List of type of dairy products
             "Lácteos", arrayOf(
                 Product("Leche entera"),
                 Product("Leche semi"),
@@ -70,7 +70,7 @@ class ShoppingList() {
             )
         )
 
-        val queso = Category(
+        val queso = Category( //List of type of cheese
             "Quesos", arrayOf(
                 Product("Oveja viejo"),
                 Product("Oveja curado"),
@@ -81,7 +81,7 @@ class ShoppingList() {
             )
         )
 
-        val pasta = Category(
+        val pasta = Category( //List of type of pasta
             "Pasta", arrayOf(
                 Product("Macarrones"),
                 Product("Espaguetis"),
@@ -91,7 +91,7 @@ class ShoppingList() {
             )
         )
 
-        val fiambre = Category(
+        val fiambre = Category( //List of type of stiff
             "Fiambre", arrayOf(
                 Product("Chorizo"),
                 Product("Salchichón"),
@@ -101,7 +101,7 @@ class ShoppingList() {
             )
         )
 
-        val zumos = Category(
+        val zumos = Category( //List of type of juice
             "Zumos", arrayOf(
                 Product("Zumo de melocotón"),
                 Product("Zumo de naranja"),
@@ -110,7 +110,7 @@ class ShoppingList() {
             )
         )
 
-        val bano = Category(
+        val bano = Category( //List of bath products
             "Baño", arrayOf(
                 Product("Gel de baño"),
                 Product("Champú"),
@@ -119,7 +119,7 @@ class ShoppingList() {
             )
         )
 
-        val limpieza = Category(
+        val limpieza = Category( //List of cleaner products
             "Limpieza", arrayOf(
                 Product("Lejía"),
                 Product("Fregona"),
@@ -133,7 +133,7 @@ class ShoppingList() {
 
         val listadoCategorias = arrayOf<Category>(frutas, verduras, ternera, pollo, cerdo, lacteos, queso, pasta, fiambre, zumos, bano, limpieza)
         var listaCompra = ArrayList<String>()
-        fun addToList(elem: String) {
+        fun addToList(elem: String) { //Add product to list
             this.listaCompra.add(elem)
         }
     }

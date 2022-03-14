@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class CategoriesActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { //The principal function when running.
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_categories)
 
@@ -28,13 +28,13 @@ class CategoriesActivity : AppCompatActivity() {
         numProduct.text = ShoppingList.listaCompra.size.toString()
     }
 
-    override fun onResume() {
+    override fun onResume() { //The function which showing all elements in list
         super.onResume()
         val numProduct = findViewById<TextView>(R.id.numProducts)
         numProduct.text = ShoppingList.listaCompra.size.toString()
     }
 
-    fun onRecyclerClick(position: Int) {
+    fun onRecyclerClick(position: Int) { //Insert one position in list
         val intent = Intent(this, ProductsActivity::class.java)
         intent.putExtra("posicion", position)
         startActivity(intent)

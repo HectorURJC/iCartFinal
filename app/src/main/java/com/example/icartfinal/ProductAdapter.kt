@@ -11,44 +11,41 @@ class ProductAdapter(
     val listener: ProductsActivity,
 ): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{ //Contains the views to manage
         var itemTitle = itemView.findViewById<TextView>(R.id.tvProducto)
 
-        init {
+        init { //Constructor function
             itemView.setOnClickListener(this)
         }
 
-        override fun onClick(v: View?) {
+        override fun onClick(v: View?) { //When clicking on the screen add another position in the list
             val position:Int = adapterPosition
             if(position != RecyclerView.NO_POSITION) {
                 listener.onRecyclerClick(position, listadoProductos)
             }
         }
 
-        fun bindProduct(prod: Product){
+        fun bindProduct(prod: Product){ //Data of product which user wants to get
             itemTitle.text = prod.nombre
 
         }
 
 
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder { //Show a view of element without personalize
         val infl = LayoutInflater.from(parent.context).inflate(R.layout.product_layout, parent, false)
         return ViewHolder(infl)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) { //Update the data of existing ViewHolder
         val prod = listadoProductos[position]
         holder.bindProduct(prod)
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount(): Int { //Return total elements in product list
         return listadoProductos.size
     }
 
 }
 
-public interface OnItemClickListener2 {
-    fun onRecyclerClick(position: Int)
-}
 

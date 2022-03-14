@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ProductsActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { //The principal function when running on the screen.
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_products)
         val data = intent.extras
@@ -35,7 +35,7 @@ class ProductsActivity : AppCompatActivity() {
         numProduct.text = ShoppingList.listaCompra.size.toString()
     }
 
-    fun onRecyclerClick(position: Int, listaProductos: Array<Product>) {
+    fun onRecyclerClick(position: Int, listaProductos: Array<Product>) { //When clicking any products, vibrate the device.
         ShoppingList.addToList(listaProductos[position].nombre)
         val vibratorService = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         vibratorService.vibrate(200)
@@ -43,7 +43,7 @@ class ProductsActivity : AppCompatActivity() {
         numProduct.text = ShoppingList.listaCompra.size.toString()
     }
 
-    override fun onResume() {
+    override fun onResume() { //The function which showing all elements in list
         super.onResume()
         val numProduct = findViewById<TextView>(R.id.numProducts2)
         numProduct.text = ShoppingList.listaCompra.size.toString()
