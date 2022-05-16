@@ -1,8 +1,10 @@
 package com.example.icartfinal
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -11,6 +13,7 @@ class ShoppingListActivity : AppCompatActivity() {
 
     lateinit var adapter:ShoppingListAdapter
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) { //The principal function when running on the screen.
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping_list)

@@ -19,7 +19,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
 
         <TextView
             android:id="@+id/tvShoppingList"
@@ -28,18 +29,26 @@
             android:paddingLeft="4dp"
             android:paddingRight="4dp"
             android:textColor="#252525"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            card_view:layout_conversion_absoluteHeight="27dp"
+            card_view:layout_editor_absoluteY="14dp"
+            card_view:layout_editor_absoluteX="4dp"
+            card_view:layout_conversion_absoluteWidth="8dp" />
 
         <Button
             android:id="@+id/btnEliminar"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:background="@android:color/transparent"
             app:icon="@android:drawable/ic_menu_delete"
             app:iconGravity="textEnd"
             app:iconTint="#F11F1F"
-            card_view:ignore="SpeakableTextPresentCheck" />
+            card_view:ignore="SpeakableTextPresentCheck"
+            card_view:layout_conversion_absoluteHeight="52dp"
+            card_view:layout_editor_absoluteY="4dp"
+            card_view:layout_editor_absoluteX="70dp"
+            card_view:layout_conversion_absoluteWidth="44dp" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

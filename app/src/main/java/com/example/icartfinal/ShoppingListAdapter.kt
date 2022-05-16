@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 //import androidx.core.os.persistableBundleOf
 import androidx.recyclerview.widget.RecyclerView
+import java.lang.Integer.parseInt
 
 //Class principal of shopping list
 class ShoppingListAdapter(

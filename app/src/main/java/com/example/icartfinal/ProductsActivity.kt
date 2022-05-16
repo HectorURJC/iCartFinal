@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Vibrator
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -38,11 +39,16 @@ class ProductsActivity : AppCompatActivity() {
 
     //When clicking any products, vibrate the device.
     fun onRecyclerClick(position: Int, listaProductos: Array<Product>) {
-        ShoppingList.addToList(listaProductos[position].nombre)
-        val vibratorService = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        vibratorService.vibrate(200)
-        val numProduct = findViewById<TextView>(R.id.numProducts2)
-        numProduct.text = ShoppingList.listaCompra.size.toString()
+        val isInList = ShoppingList.addToList(listaProductos[position].nombre)
+        if (isInList) {
+            val vibratorService = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            vibratorService.vibrate(200)
+            val numProduct = findViewById<TextView>(R.id.numProducts2)
+            numProduct.text = ShoppingList.listaCompra.size.toString()
+        }
+        else{
+            Toast.makeText(this, "Ya esta en la lista", Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onResume() { //The function which showing all elements in list
@@ -50,4 +56,5 @@ class ProductsActivity : AppCompatActivity() {
         val numProduct = findViewById<TextView>(R.id.numProducts2)
         numProduct.text = ShoppingList.listaCompra.size.toString()
     }
+
 }

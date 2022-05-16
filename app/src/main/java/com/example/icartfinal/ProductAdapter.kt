@@ -10,10 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 class ProductAdapter(
     val listadoProductos: Array<Product>,
     val listener: ProductsActivity,
-): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     //Contains the views to manage
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener{
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
         var itemTitle = itemView.findViewById<TextView>(R.id.tvProducto)
 
         init { //Constructor function
@@ -21,26 +22,32 @@ class ProductAdapter(
         }
 
         override fun onClick(v: View?) { //When clicking on the screen add another position in the list
-            val position:Int = adapterPosition
-            if(position != RecyclerView.NO_POSITION) {
+            val position: Int = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
                 listener.onRecyclerClick(position, listadoProductos)
             }
         }
 
         //Data of product which user wants to get
-        fun bindProduct(prod: Product){
+        fun bindProduct(prod: Product) {
             itemTitle.text = prod.nombre
-
         }
 
-
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder { //Show a view of element without personalize
-        val infl = LayoutInflater.from(parent.context).inflate(R.layout.product_layout, parent, false)
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ViewHolder { //Show a view of element without personalize
+        val infl =
+            LayoutInflater.from(parent.context).inflate(R.layout.product_layout, parent, false)
         return ViewHolder(infl)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) { //Update the data of existing ViewHolder
+    override fun onBindViewHolder(
+        holder: ViewHolder,
+        position: Int
+    ) { //Update the data of existing ViewHolder
         val prod = listadoProductos[position]
         holder.bindProduct(prod)
     }
