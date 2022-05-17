@@ -49,6 +49,8 @@
             card_view:layout_editor_absoluteX="70dp"
             card_view:layout_conversion_absoluteWidth="44dp" />
 
+            card_view:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
